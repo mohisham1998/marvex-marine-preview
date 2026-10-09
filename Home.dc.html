@@ -90,7 +90,7 @@ a:hover{color:#8A6424}
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:24px">
       <sc-for list="{{ services }}" as="s" hint-placeholder-count="9">
         <a data-reveal="1" data-reveal-delay="{{ s.delay }}" href="{{ s.href }}" style="display:flex;flex-direction:column;background:#F6F3EC;color:#0B1F45;overflow:hidden;transition:transform .35s ease, box-shadow .35s ease" style-hover="transform:translateY(-6px);box-shadow:0 22px 44px rgba(11,31,69,0.14);color:#0B1F45">
-          <div style="height:190px;position:relative;background:#E6DFD0"><img src="{{ s.img }}" alt="{{ s.ph }}" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover"></div>
+          <div style="height:190px;position:relative;background:#E6DFD0"><img src="{{ s.img }}" alt="{{ s.ph }}" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;object-position:{{ s.pos }}"></div>
           <div style="padding:26px 22px 28px;display:flex;flex-direction:column;gap:12px;position:relative;flex:1">
             <span style="position:absolute;top:-30px;left:22px;width:56px;height:56px;background:#0B1F45;color:#D4AE6A;display:flex;align-items:center;justify-content:center;font-family:'Material Symbols Outlined';font-size:30px">{{ s.icon }}</span>
             <span style="margin-top:22px;font-size:14px;font-weight:700;color:#8A6424;letter-spacing:0.12em">{{ s.num }}</span>
@@ -144,8 +144,8 @@ class Component extends DCLogic {
   componentDidMount() { const go = () => window.marvexMotion ? window.marvexMotion() : setTimeout(go, 100); go(); }
   renderVals() {
     const services = [
-      ['crew', 'groups', 'Crew Change Services', 'Sign-on and sign-off arrangements, moving seafarers smoothly between vessels, airports and accommodation.', 'Crew change / airport transfer photo'],
-      ['stores', 'inventory_2', 'Ship Stores Supply & Delivery', 'Deck, engine, technical and safety stores supplied and delivered onboard during transit or port calls.', 'Ship stores / deck & engine supplies photo'],
+      ['crew', 'groups', 'Crew Change Services', 'Sign-on and sign-off arrangements, moving seafarers smoothly between vessels, airports and accommodation.', 'Crew change / airport transfer photo', 'crew-change'],
+      ['stores', 'inventory_2', 'Ship Stores Supply & Delivery', 'Deck, engine, technical and safety stores supplied and delivered onboard during transit or port calls.', 'Ship stores / deck & engine supplies photo', 'ship-stores', '50% 70%'],
       ['customs', 'assignment_turned_in', 'Customs & Clearance', 'Customs clearance for ship stores, spare parts and approved vessel requirements.', 'Customs / spare parts clearance photo', 'customs-clearance'],
       ['provisions', 'restaurant', 'Provisions Supply', 'Fresh, frozen and dry provisions for the daily needs of vessel crews.', 'Fresh provisions photo'],
       ['underwater', 'scuba_diving', 'Underwater Inspection & Hull Cleaning', 'Diving operations for hull inspections, condition assessments and underwater cleaning.', 'Underwater diving / hull inspection photo', 'underwater-inspection'],
@@ -153,7 +153,7 @@ class Component extends DCLogic {
       ['water', 'water_drop', 'Fresh Water Supply', 'Fresh and potable water replenishment during port calls and scheduled operations.', 'Fresh water supply photo', 'fresh-water'],
       ['garbage', 'recycling', 'Garbage Collection & Disposal', 'Collection, segregation and disposal of vessel garbage through suitable providers.', 'Garbage collection photo', 'garbage-disposal'],
       ['husbandry', 'anchor', 'Vessel Husbandry Services', 'Essential local arrangements managed during canal transit and port calls.', 'Husbandry / port operations photo']
-    ].map(([id, icon, title, intro, ph, img], i) => ({ icon, title, intro, ph, slot: 'home-svc-' + id, img: './assets/photos/' + (img || id) + '.jpg', href: 'Services.dc.html#' + id, num: String(i + 1).padStart(2, '0'), delay: (i % 3) * 120 }));
+    ].map(([id, icon, title, intro, ph, img, pos], i) => ({ icon, title, intro, ph, pos: pos || '50% 50%', slot: 'home-svc-' + id, img: './assets/photos/' + (img || id) + '.jpg', href: 'Services.dc.html#' + id, num: String(i + 1).padStart(2, '0'), delay: (i % 3) * 120 }));
     const reasons = [
       ['explore', 'Suez Canal-focused support', "Dedicated to vessels transiting one of the world's most important waterways."],
       ['schedule', 'Time-sensitive coordination', 'Services coordinated in line with agreed operational timelines.'],
