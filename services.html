@@ -1,9 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+<meta name="description" content="Crew change, ship stores, customs clearance, provisions, underwater inspection, sludge disposal, fresh water, garbage disposal and husbandry services in Egypt.">
+<link rel="canonical" href="https://marvex-marine.com/services">
+<meta name="theme-color" content="#0B1F45">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Marvex Marine">
+<meta property="og:url" content="https://marvex-marine.com/services">
+<meta property="og:description" content="Crew change, ship stores, customs clearance, provisions, underwater inspection, sludge disposal, fresh water, garbage disposal and husbandry services in Egypt.">
+<meta property="og:image" content="https://marvex-marine.com/assets/photos/hero-canal.jpg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<script src="/support.js"></script>
 </head>
 <body>
 <x-dc>
@@ -12,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0&display=block" rel="stylesheet">
-<script src="./marvex-motion.js"></script>
+<script src="/marvex-motion.js"></script>
 <style>
 html{scroll-behavior:smooth;scroll-padding-top:200px}
 body{margin:0;background:#F6F3EC;color:#0B1F45;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
@@ -26,7 +38,7 @@ a:hover{color:#8A6424}
 <dc-import name="SiteHeader" active="services" hint-size="100%,118px" style="position:sticky;top:0;z-index:50;display:block"></dc-import>
 
 <section data-screen-label="Services hero" style="position:relative;min-height:460px;display:flex;align-items:flex-end;background:#0B1F45;color:#FFFFFF;overflow:hidden">
-  <div style="position:absolute;inset:0;overflow:hidden"><div data-kenburns="1" style="position:absolute;inset:0"><img src="./assets/photos/husbandry.jpg" alt="Wide photo: ship supply launch alongside vessel" fetchpriority="high" style="display:block;width:100%;height:100%;object-fit:cover"></div></div>
+  <div style="position:absolute;inset:0;overflow:hidden"><div data-kenburns="1" style="position:absolute;inset:0"><img src="/assets/photos/husbandry.jpg" alt="Wide photo: ship supply launch alongside vessel" fetchpriority="high" style="display:block;width:100%;height:100%;object-fit:cover"></div></div>
   <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(7,22,52,0.92) 0%,rgba(7,22,52,0.65) 55%,rgba(7,22,52,0.25) 100%)"></div>
   <div style="position:relative;width:100%;max-width:1280px;margin:0 auto;padding:110px 28px 80px;pointer-events:none;display:flex;flex-direction:column;gap:20px">
     <div data-reveal="1" style="display:flex;align-items:center;gap:10px;font-size:15px;color:#D3DAE8"><span>Home</span><span style="font-family:'Material Symbols Outlined';font-size:18px;color:#D4AE6A">chevron_right</span><span style="color:#FFFFFF;font-weight:600">Our Services</span></div>
@@ -113,7 +125,7 @@ class Component extends DCLogic {
       { id: 'water', img: 'fresh-water', icon: 'water_drop', short: 'Fresh Water', title: 'Fresh Water Supply', ph: 'Fresh water supply photo', intro: 'Marvex Marine arranges fresh water supply for vessels requiring replenishment during port calls or scheduled maritime operations.', items: ['Fresh water supply coordination for vessels', 'Arrangement of water delivery by suitable means, subject to local availability', 'Coordination of delivery timing with vessel representatives', 'Support with quantity confirmation and delivery documentation', 'Arrangements for potable water supply, subject to applicable quality and testing requirements'], note: 'Available in Port Said, Suez, Ain Sokhna, Alexandria and Damietta. Availability, delivery method and water specifications are confirmed per request.' },
       { id: 'garbage', img: 'garbage-disposal', icon: 'recycling', short: 'Garbage Disposal', title: 'Garbage Collection & Disposal', ph: 'Garbage collection photo', intro: 'Marvex Marine arranges vessel garbage collection and disposal through suitable waste management providers, helping ships manage operational waste during port calls and other approved service windows.', items: ['Collection arrangements for general vessel garbage', 'Coordination of waste reception and transportation', 'Arrangements for segregation of waste according to applicable requirements', 'Coordination of disposal through appropriate service providers', 'Assistance with waste disposal receipts and supporting documentation, where available and applicable'], note: 'Available in Port Said, Suez, Ain Sokhna, Alexandria and Damietta. Subject to port procedures and authorised reception-facility availability.' },
       { id: 'husbandry', icon: 'anchor', short: 'Husbandry', title: 'Vessel Husbandry Services', ph: 'Vessel husbandry / port operations photo', intro: 'Our husbandry support helps vessel operators manage essential local arrangements during Suez Canal transit and Egyptian port calls.', items: ['Coordination of local vessel requirements', 'Crew-related assistance and logistics', 'Ship spares and stores handling', 'Coordination with local suppliers and service providers', 'General vessel support and operational follow-up', 'Assistance with port-related formalities, where authorised'] }
-    ].map((s, i) => ({ ...s, hash: '#' + s.id, slot: 'svc-' + s.id, img: './assets/photos/' + (s.img || s.id) + '.jpg', pos: s.pos || '50% 50%', num: String(i + 1).padStart(2, '0'), dir: i % 2 ? 'row-reverse' : 'row', hasNote: !!s.note }));
+    ].map((s, i) => ({ ...s, hash: '#' + s.id, slot: 'svc-' + s.id, img: '/assets/photos/' + (s.img || s.id) + '.jpg', pos: s.pos || '50% 50%', num: String(i + 1).padStart(2, '0'), dir: i % 2 ? 'row-reverse' : 'row', hasNote: !!s.note }));
     const steps = [
       ['mail', 'Receive your request', 'Share the vessel name, IMO number if available, location, ETA and required services.'],
       ['fact_check', 'Confirm requirements', 'We review the requested services, documentation, timing, availability and applicable requirements.'],
