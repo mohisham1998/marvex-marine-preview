@@ -1648,7 +1648,7 @@
       const pre = res ? res[url] : void 0;
       const target = typeof pre === "string" && pre ? pre : url;
       const blob = bundledBlob(target);
-      (blob ? blob.text() : fetch(target).then((res2) => {
+      (blob ? blob.text() : fetch(target, { cache: "no-cache" }).then((res2) => {
         if (!res2.ok) {
           console.error(
             '[dc-runtime] sibling fetch for "' + name + '" failed:',
