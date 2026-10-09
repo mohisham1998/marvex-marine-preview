@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<header style="width:100%;font-family:'Hanken Grotesk',system-ui,sans-serif">
+  <div style="background:#071634;color:#C9D2E3;font-size:14px">
+    <div style="max-width:1280px;margin:0 auto;padding:9px 28px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <span style="display:flex;align-items:center;gap:8px"><span style="font-family:'Material Symbols Outlined';font-size:18px;color:#D4AE6A">location_on</span>Suez Canal &amp; Egyptian Ports</span>
+      <a href="tel:+20663204265" style="display:flex;align-items:center;gap:8px;color:#FFFFFF;font-weight:600" style-hover="color:#D4AE6A"><span style="font-family:'Material Symbols Outlined';font-size:18px;color:#D4AE6A">call</span>+20 66 320 4265</a>
+    </div>
+  </div>
+  <div style="background:#FFFFFF;border-bottom:1px solid #E6DFD0;box-shadow:0 6px 24px rgba(11,31,69,0.06)">
+    <div style="max-width:1280px;margin:0 auto;padding:8px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
+      <a href="Home.dc.html" style="display:flex;align-items:center"><img src="./assets/marvex-logo.jpeg" alt="Marvex Marine" style="height:64px;width:auto;display:block"></a>
+      <nav style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
+        <sc-for list="{{ links }}" as="l" hint-placeholder-count="5">
+          <a href="{{ l.href }}" style="padding:14px 16px;font-size:16px;font-weight:600;color:{{ l.color }};border-bottom:2px solid {{ l.line }}" style-hover="color:#8A6424">{{ l.label }}</a>
+        </sc-for>
+      </nav>
+    </div>
+  </div>
+</header>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:130},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;about&quot;,&quot;services&quot;,&quot;area&quot;,&quot;contact&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const active = this.props.active ?? 'home';
+    const links = [
+      ['home', 'Home', 'Home.dc.html'],
+      ['about', 'About Us', 'About.dc.html'],
+      ['services', 'Our Services', 'Services.dc.html'],
+      ['area', 'Service Area', 'Service%20Area.dc.html'],
+      ['contact', 'Contact Us', 'Contact.dc.html']
+    ].map(([k, label, href]) => ({ label, href, color: k === active ? '#0B1F45' : '#3A4A66', line: k === active ? '#C39549' : 'transparent' }));
+    return { links };
+  }
+}
+</script>
+</body>
+</html>

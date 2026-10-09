@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Our Services — Marvex Marine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0&display=block" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<script src="./marvex-motion.js"></script>
+<style>
+html{scroll-behavior:smooth;scroll-padding-top:200px}
+body{margin:0;background:#F6F3EC;color:#0B1F45;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#0B1F45;text-decoration:none}
+a:hover{color:#8A6424}
+</style>
+</helmet>
+
+<div style="min-height:100vh;display:flex;flex-direction:column">
+<dc-import name="SiteHeader" active="services" hint-size="100%,118px" style="position:sticky;top:0;z-index:50;display:block"></dc-import>
+
+<section data-screen-label="Services hero" style="position:relative;min-height:460px;display:flex;align-items:flex-end;background:#0B1F45;color:#FFFFFF;overflow:hidden">
+  <div style="position:absolute;inset:0;overflow:hidden"><div data-kenburns="1" style="position:absolute;inset:0"><image-slot id="services-hero" src="./assets/photos/husbandry.jpg" shape="rect" placeholder="Wide photo: ship supply launch alongside vessel"></image-slot></div></div>
+  <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(7,22,52,0.92) 0%,rgba(7,22,52,0.65) 55%,rgba(7,22,52,0.25) 100%)"></div>
+  <div style="position:relative;width:100%;max-width:1280px;margin:0 auto;padding:110px 28px 80px;pointer-events:none;display:flex;flex-direction:column;gap:20px">
+    <div data-reveal="1" style="display:flex;align-items:center;gap:10px;font-size:15px;color:#D3DAE8"><span>Home</span><span style="font-family:'Material Symbols Outlined';font-size:18px;color:#D4AE6A">chevron_right</span><span style="color:#FFFFFF;font-weight:600">Our Services</span></div>
+    <h1 data-reveal="1" data-reveal-delay="100" style="margin:0;font-family:'Marcellus',serif;font-weight:400;font-size:clamp(44px,6vw,76px);line-height:1.05">Our Services</h1>
+    <p data-reveal="1" data-reveal-delay="200" style="margin:0;font-size:20px;line-height:1.6;color:#E4E9F2;max-width:640px">Six service categories, coordinated through one dependable partner for every transit and port call.</p>
+  </div>
+</section>
+
+<div style="background:#FFFFFF;border-bottom:1px solid #E6DFD0">
+  <div style="max-width:1280px;margin:0 auto;padding:0 28px;display:flex;gap:4px;flex-wrap:wrap">
+    <sc-for list="{{ services }}" as="s" hint-placeholder-count="6">
+      <a href="{{ s.hash }}" style="display:flex;align-items:center;gap:10px;padding:20px 16px;font-size:15.5px;font-weight:600;color:#2E3D5A;border-bottom:3px solid transparent" style-hover="color:#0B1F45;border-bottom-color:#C39549"><span style="font-family:'Material Symbols Outlined';font-size:22px;color:#8A6424">{{ s.icon }}</span>{{ s.short }}</a>
+    </sc-for>
+  </div>
+</div>
+
+<section data-screen-label="Service list" style="background:#F6F3EC">
+  <div style="max-width:1280px;margin:0 auto;padding:100px 28px 40px;display:flex;flex-direction:column;gap:110px">
+    <sc-for list="{{ services }}" as="s" hint-placeholder-count="3">
+      <article id="{{ s.id }}" style="display:flex;flex-wrap:wrap;gap:64px;align-items:center;flex-direction:{{ s.dir }}">
+        <div data-reveal="1" style="flex:1 1 440px;min-width:0;height:480px;position:relative">
+          <div style="position:absolute;inset:0;background:#E6DFD0;overflow:hidden"><image-slot id="{{ s.slot }}" src="{{ s.img }}" shape="rect" placeholder="{{ s.ph }}"></image-slot></div>
+          <span style="position:absolute;top:-22px;left:-22px;width:88px;height:88px;background:#0B1F45;color:#D4AE6A;display:flex;align-items:center;justify-content:center;font-family:'Material Symbols Outlined';font-size:46px;pointer-events:none">{{ s.icon }}</span>
+        </div>
+        <div style="flex:1 1 440px;min-width:0;display:flex;flex-direction:column;gap:20px">
+          <span data-reveal="1" style="font-family:'Marcellus',serif;font-size:60px;line-height:1;color:#C39549">{{ s.num }}</span>
+          <h2 data-reveal="1" style="margin:0;font-family:'Marcellus',serif;font-weight:400;font-size:clamp(32px,3.6vw,46px);line-height:1.12">{{ s.title }}</h2>
+          <p data-reveal="1" style="margin:0;font-size:18px;line-height:1.7;color:#2E3D5A;text-wrap:pretty">{{ s.intro }}</p>
+          <ul data-reveal="1" style="margin:4px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px">
+            <sc-for list="{{ s.items }}" as="it" hint-placeholder-count="5">
+              <li style="display:flex;gap:12px;align-items:flex-start;background:#FFFFFF;padding:14px 16px;font-size:16px;line-height:1.45;color:#0B1F45;border:1px solid #E6DFD0"><span style="font-family:'Material Symbols Outlined';font-size:22px;color:#8A6424;flex:none">check_circle</span><span>{{ it }}</span></li>
+            </sc-for>
+          </ul>
+          <sc-if value="{{ s.hasNote }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:0;display:flex;gap:10px;align-items:flex-start;font-size:15px;line-height:1.5;color:#4A5873"><span style="font-family:'Material Symbols Outlined';font-size:20px;color:#8A6424">info</span>{{ s.note }}</p>
+          </sc-if>
+        </div>
+      </article>
+    </sc-for>
+  </div>
+  <div style="max-width:1280px;margin:0 auto;padding:40px 28px 110px">
+    <div data-reveal="1" style="display:flex;gap:16px;align-items:flex-start;background:#FFFFFF;border:1px solid #E6DFD0;border-left:none;padding:26px 30px;font-size:16.5px;line-height:1.6;color:#2E3D5A">
+      <span style="font-family:'Material Symbols Outlined';font-size:28px;color:#8A6424;flex:none">gavel</span>
+      <span><strong style="color:#0B1F45">Service note:</strong> Services are arranged according to the vessel's requirements, availability, port regulations and any necessary permits or authorisations.</span>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="How We Work" style="background:#0B1F45;color:#FFFFFF">
+  <div style="max-width:1280px;margin:0 auto;padding:120px 28px">
+    <div style="display:flex;flex-direction:column;gap:18px;max-width:720px;margin-bottom:64px">
+      <div data-reveal="1" style="color:#D4AE6A;font-size:14px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase">How We Work</div>
+      <h2 data-reveal="1" style="margin:0;font-family:'Marcellus',serif;font-weight:400;font-size:clamp(36px,4.2vw,54px);line-height:1.1">From request to onboard, in four steps.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:24px">
+      <sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
+        <div data-reveal="1" data-reveal-delay="{{ st.delay }}" style="position:relative;border:1px solid #23406F;padding:36px 28px;display:flex;flex-direction:column;gap:16px">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span style="width:60px;height:60px;border-radius:50%;background:#C39549;color:#0B1F45;display:flex;align-items:center;justify-content:center;font-family:'Material Symbols Outlined';font-size:30px">{{ st.icon }}</span>
+            <span style="font-family:'Marcellus',serif;font-size:40px;color:#2E4A7A">{{ st.num }}</span>
+          </div>
+          <div style="font-size:21px;font-weight:700">{{ st.title }}</div>
+          <p style="margin:0;font-size:16.5px;line-height:1.6;color:#D3DAE8;text-wrap:pretty">{{ st.text }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<dc-import name="SiteFooter" hint-size="100%,420px" style="display:block"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() { const go = () => window.marvexMotion ? window.marvexMotion() : setTimeout(go, 100); go(); }
+  renderVals() {
+    const services = [
+      { id: 'crew', icon: 'groups', short: 'Crew Change', title: 'Crew Change Services', ph: 'Crew transfer / airport pickup photo', intro: 'We coordinate crew sign-on and sign-off arrangements, supporting the smooth movement of seafarers between vessels, airports and accommodation.', items: ['Crew transfer and transportation coordination', 'Airport pickup and drop-off arrangements', 'Hotel and accommodation coordination', 'Assistance with immigration and port formalities', 'Coordination of joining and departing crew documentation'], note: 'All arrangements are subject to applicable immigration, port and security requirements.' },
+      { id: 'stores', icon: 'inventory_2', short: 'Ship Stores', title: 'Ship Stores Supply', ph: 'Deck & engine stores photo', intro: 'We arrange the supply of essential ship stores and operational materials to meet vessel requirements during transit or port calls.', items: ['Deck and engine stores', 'Technical and maintenance supplies', 'Safety equipment and consumables', 'General vessel supplies', 'Sourcing, procurement and onboard delivery coordination'] },
+      { id: 'provisions', icon: 'restaurant', short: 'Provisions', title: 'Provisions Supply', ph: 'Fresh provisions / galley supplies photo', intro: 'Provisions supply to support the daily needs of vessel crews, with attention to quality, freshness and timely delivery.', items: ['Fresh fruits and vegetables', 'Meat, poultry and seafood', 'Dry, frozen and chilled food products', 'Beverages and essential galley supplies', 'Customised supply according to vessel specifications and crew requirements'] },
+      { id: 'customs', icon: 'local_shipping', short: 'Customs & Delivery', title: 'Customs Clearance & Onboard Delivery', ph: 'Customs / spare parts delivery photo', intro: 'We coordinate customs clearance and delivery arrangements for ship stores, spare parts and other approved vessel requirements.', items: ['Customs documentation coordination', 'Clearance arrangements for ship spares and stores', 'Coordination with relevant authorities and service providers', 'Cargo collection and transportation', 'Delivery directly onboard'], note: 'Onboard delivery is subject to port access and applicable regulations.' },
+      { id: 'husbandry', icon: 'anchor', short: 'Husbandry', title: 'Vessel Husbandry Services', ph: 'Vessel husbandry / port operations photo', intro: 'Our husbandry support helps vessel operators manage essential local arrangements during Suez Canal transit and Egyptian port calls.', items: ['Coordination of local vessel requirements', 'Crew-related assistance and logistics', 'Ship spares and stores handling', 'Coordination with local suppliers and service providers', 'General vessel support and operational follow-up', 'Assistance with port-related formalities, where authorised'] },
+      { id: 'publications', icon: 'menu_book', short: 'Publications', title: 'Marine Publications Supply', ph: 'Nautical charts & publications photo', intro: 'We arrange the supply of marine publications and reference materials required for vessel operations, subject to availability and applicable requirements.', items: ['Nautical publications and reference books', 'Maritime manuals and technical publications', 'Applicable charts and navigational references', 'Sourcing and delivery coordination', 'Assistance with obtaining requested editions and updates'] }
+    ].map((s, i) => ({ ...s, hash: '#' + s.id, slot: 'svc-' + s.id, img: './assets/photos/' + s.id + '.jpg', num: String(i + 1).padStart(2, '0'), dir: i % 2 ? 'row-reverse' : 'row', hasNote: !!s.note }));
+    const steps = [
+      ['mail', 'Receive your request', 'Share the vessel name, IMO number if available, location, ETA and required services.'],
+      ['fact_check', 'Confirm requirements', 'We review the requested services, documentation, timing, availability and applicable requirements.'],
+      ['hub', 'Coordinate arrangements', 'We coordinate the relevant suppliers, transportation, clearance arrangements and service providers.'],
+      ['task_alt', 'Deliver and follow up', 'We follow up on agreed arrangements and provide updates throughout the service process.']
+    ].map(([icon, title, text], i) => ({ icon, title, text, num: String(i + 1).padStart(2, '0'), delay: i * 120 }));
+    return { services, steps };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Service Area — Marvex Marine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0&display=block" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<script src="./marvex-motion.js"></script>
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#F6F3EC;color:#0B1F45;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#0B1F45;text-decoration:none}
+a:hover{color:#8A6424}
+</style>
+</helmet>
+
+<div style="min-height:100vh;display:flex;flex-direction:column">
+<dc-import name="SiteHeader" active="area" hint-size="100%,118px" style="position:sticky;top:0;z-index:50;display:block"></dc-import>
+
+<section data-screen-label="Area hero" style="position:relative;min-height:460px;display:flex;align-items:flex-end;background:#0B1F45;color:#FFFFFF;overflow:hidden">
+  <div style="position:absolute;inset:0;overflow:hidden"><div data-kenburns="1" style="position:absolute;inset:0"><image-slot id="area-hero" src="./assets/photos/service-area.jpg" shape="rect" placeholder="Wide photo: ship convoy in the Suez Canal"></image-slot></div></div>
+  <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(7,22,52,0.92) 0%,rgba(7,22,52,0.65) 55%,rgba(7,22,52,0.25) 100%)"></div>
+  <div style="position:relative;width:100%;max-width:1280px;margin:0 auto;padding:110px 28px 80px;pointer-events:none;display:flex;flex-direction:column;gap:20px">
+    <div data-reveal="1" style="display:flex;align-items:center;gap:10px;font-size:15px;color:#D3DAE8"><span>Home</span><span style="font-family:'Material Symbols Outlined';font-size:18px;color:#D4AE6A">chevron_right</span><span style="color:#FFFFFF;font-weight:600">Service Area</span></div>
+    <h1 data-reveal="1" data-reveal-delay="100" style="margin:0;font-family:'Marcellus',serif;font-weight:400;font-size:clamp(44px,6vw,76px);line-height:1.05">Marine Support Along the Suez Canal</h1>
+    <p data-reveal="1" data-reveal-delay="200" style="margin:0;font-size:20px;line-height:1.6;color:#E4E9F2;max-width:640px">Suez Canal transits and Egyptian port calls.</p>
+  </div>
+</section>
+
+<section data-screen-label="Coverage" style="background:#F6F3EC">
+  <div style="max-width:1280px;margin:0 auto;padding:120px 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:72px;align-items:center">
+    <div data-reveal="1" style="height:600px;position:relative;background:#E6DFD0">
+      <image-slot id="area-map" src="./assets/photos/husbandry.jpg" shape="rect" placeholder="Map: Suez Canal &amp; Egyptian ports served"></image-slot>
+      <div style="position:absolute;right:20px;top:20px;background:#0B1F45;color:#FFFFFF;padding:14px 18px;display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600;pointer-events:none"><span style="font-family:'Material Symbols Outlined';font-size:22px;color:#D4AE6A">explore</span>Egypt</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <div data-reveal="1" style="color:#8A6424;font-size:14px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase">Our Service Area</div>
+      <h2 data-reveal="1" style="margin:0;font-family:'Marcellus',serif;font-weight:400;font-size:clamp(36px,4.2vw,54px);line-height:1.1;text-wrap:balance">Strategically focused on Egypt's maritime sector.</h2>
+      <p data-reveal="1" style="margin:0;font-size:18px;line-height:1.7;color:#2E3D5A;text-wrap:pretty">Marvex Marine arranges vessel support for Suez Canal transits and calls at Egyptian ports, according to service availability and operational requirements.</p>
+      <p data-reveal="1" style="margin:0;font-size:18px;line-height:1.7;color:#2E3D5A;text-wrap:pretty">Whether your vessel requires essential stores, crew change assistance or delivery of urgent ship spares, we coordinate the required services efficiently and professionally.</p>
+      <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px;margin-top:8px">
+        <div style="display:flex;gap:14px;align-items:center;background:#FFFFFF;border:1px solid #E6DFD0;padding:18px"><span style="font-family:'Material Symbols Outlined';font-size:30px;color:#8A6424">swap_vert</span><span style="font-size:16.5px;font-weight:600">Suez Canal transits</span></div>
+        <div style="display:flex;gap:14px;align-items:center;background:#FFFFFF;border:1px solid #E6DFD0;padding:18px"><span style="font-family:'Material Symbols Outlined';font-size:30px;color:#8A6424">anchor</span><span style="font-size:16.5px;font-weight:600">Egyptian port calls</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Local network" style="background:#0B1F45;color:#FFFFFF">
+  <div style="max-width:1280px;margin:0 auto;padding:120px 28px">
+    <div style="display:flex;flex-direction:column;gap:18px;max-width:760px;margin-bottom:60px">
+      <div data-reveal="1" style="color:#D4AE6A;font-size:14px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase">Local Coordination Network</div>
+      <h2 data-reveal="1" style="margin:0;font-family:'Marcellus',serif;font-weight:400;font-size:clamp(34px,4vw,50px);line-height:1.1;text-wrap:balance">Everything your vessel needs, arranged locally.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:16px">
+      <sc-for list="{{ network }}" as="n" hint-placeholder-count="6">
+        <a data-reveal="1" data-reveal-delay="{{ n.delay }}" href="{{ n.href }}" style="border:1px solid #23406F;padding:30px 22px;display:flex;flex-direction:column;gap:16px;color:#FFFFFF;transition:background .3s ease,border-color .3s ease,transform .3s ease" style-hover="background:#102A58;border-color:#C39549;transform:translateY(-4px);color:#FFFFFF">
+          <span style="font-family:'Material Symbols Outlined';font-size:42px;color:#D4AE6A">{{ n.icon }}</span>
+          <span style="font-size:18px;font-weight:700">{{ n.label }}</span>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Area photos" style="background:#FFFFFF">
+  <div style="max-width:1280px;margin:0 auto;padding:100px 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:20px">
+    <div data-reveal="1" style="height:340px;position:relative;background:#E6DFD0"><image-slot id="area-photo-1" src="./assets/photos/port-terminal.jpg" shape="rect" placeholder="Port Said / canal entrance photo"></image-slot></div>
+    <div data-reveal="1" data-reveal-delay="120" style="height:340px;position:relative;background:#E6DFD0"><image-slot id="area-photo-2" src="./assets/photos/hero-canal.jpg" shape="rect" placeholder="Vessel transit photo"></image-slot></div>
+    <div data-reveal="1" data-reveal-delay="240" style="height:340px;position:relative;background:#E6DFD0"><image-slot id="area-photo-3" src="./assets/photos/customs.jpg" shape="rect" placeholder="Port logistics photo"></image-slot></div>
+  </div>
+</section>
+
+<dc-import name="SiteFooter" hint-size="100%,420px" style="display:block"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() { const go = () => window.marvexMotion ? window.marvexMotion() : setTimeout(go, 100); go(); }
+  renderVals() {
+    const network = [
+      ['groups', 'Crew logistics', 'crew'], ['inventory_2', 'Ship supply', 'stores'], ['assignment_turned_in', 'Customs clearance', 'customs'],
+      ['restaurant', 'Provisions', 'provisions'], ['menu_book', 'Marine publications', 'publications'], ['anchor', 'Husbandry', 'husbandry']
+    ].map(([icon, label, id], i) => ({ icon, label, href: 'Services.dc.html#' + id, delay: i * 80 }));
+    return { network };
+  }
+}
+</script>
+</body>
+</html>

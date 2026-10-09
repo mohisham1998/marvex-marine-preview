@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>About Us — Marvex Marine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0&display=block" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<script src="./marvex-motion.js"></script>
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#F6F3EC;color:#0B1F45;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#0B1F45;text-decoration:none}
+a:hover{color:#8A6424}
+</style>
+</helmet>
+
+<div style="min-height:100vh;display:flex;flex-direction:column">
+<dc-import name="SiteHeader" active="about" hint-size="100%,118px" style="position:sticky;top:0;z-index:50;display:block"></dc-import>
+
+<section data-screen-label="About hero" style="position:relative;min-height:460px;display:flex;align-items:flex-end;background:#0B1F45;color:#FFFFFF;overflow:hidden">
+  <div style="position:absolute;inset:0;overflow:hidden"><div data-kenburns="1" style="position:absolute;inset:0"><image-slot id="about-hero" src="./assets/photos/port-terminal.jpg" shape="rect" placeholder="Wide photo: port operations / vessel at berth"></image-slot></div></div>
+  <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(7,22,52,0.92) 0%,rgba(7,22,52,0.65) 55%,rgba(7,22,52,0.25) 100%)"></div>
+  <div style="position:relative;width:100%;max-width:1280px;margin:0 auto;padding:110px 28px 80px;pointer-events:none;display:flex;flex-direction:column;gap:20px">
+    <div data-reveal="1" style="display:flex;align-items:center;gap:10px;font-size:15px;color:#D3DAE8"><span>Home</span><span style="font-family:'Material Symbols Outlined';font-size:18px;color:#D4AE6A">chevron_right</span><span style="color:#FFFFFF;font-weight:600">About Us</span></div>
+    <h1 data-reveal="1" data-reveal-delay="100" style="margin:0;font-family:'Marcellus',serif;font-weight:400;font-size:clamp(44px,6vw,76px);line-height:1.05">About Marvex Marine</h1>
+    <p data-reveal="1" data-reveal-delay="200" style="margin:0;font-size:20px;line-height:1.6;color:#E4E9F2;max-width:640px">A marine services and ship support company serving vessels in the Suez Canal and Egyptian waters.</p>
+  </div>
+</section>
+
+<section data-screen-label="Who we are" style="background:#F6F3EC">
+  <div style="max-width:1280px;margin:0 auto;padding:120px 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:72px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <div data-reveal="1" style="color:#8A6424;font-size:14px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase">Who We Are</div>
+      <h2 data-reveal="1" style="margin:0;font-family:'Marcellus',serif;font-weight:400;font-size:clamp(36px,4.2vw,54px);line-height:1.1;text-wrap:balance">Time, precision and coordination.</h2>
+      <p data-reveal="1" style="margin:0;font-size:18px;line-height:1.7;color:#2E3D5A;text-wrap:pretty">Marvex Marine is dedicated to serving vessels navigating the Suez Canal and operating in Egyptian waters and ports. We understand the importance of time, precision and coordination in the maritime industry.</p>
+      <p data-reveal="1" style="margin:0;font-size:18px;line-height:1.7;color:#2E3D5A;text-wrap:pretty">Our services support shipowners, ship managers, charterers, vessel operators and shipping agencies by arranging essential vessel requirements through a single, dependable point of contact.</p>
+      <p data-reveal="1" style="margin:0;font-size:18px;line-height:1.7;color:#2E3D5A;text-wrap:pretty">From crew change coordination and customs formalities to ship stores, provisions and onboard deliveries, every requirement is handled professionally and efficiently.</p>
+    </div>
+    <div data-reveal="1" style="position:relative;height:580px">
+      <div style="position:absolute;inset:0 0 40px 40px;background:#E6DFD0"><image-slot id="about-story" src="./assets/photos/customs.jpg" shape="rect" placeholder="Team / coordination photo"></image-slot></div>
+      <div style="position:absolute;left:0;bottom:0;background:#0B1F45;color:#FFFFFF;padding:30px 32px;max-width:340px;pointer-events:none;display:flex;flex-direction:column;gap:12px">
+        <span style="font-family:'Material Symbols Outlined';font-size:36px;color:#D4AE6A">format_quote</span>
+        <span style="font-family:'Marcellus',serif;font-size:21px;line-height:1.4">Strong communication, operational flexibility and attention to detail are the foundations of successful marine support.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Mission" style="background:#FFFFFF">
+  <div style="max-width:1280px;margin:0 auto;padding:110px 28px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:24px">
+      <div data-reveal="1" style="background:#F6F3EC;padding:44px 38px;display:flex;flex-direction:column;gap:18px;border-top:4px solid #C39549">
+        <span style="width:68px;height:68px;background:#0B1F45;color:#D4AE6A;display:flex;align-items:center;justify-content:center;font-family:'Material Symbols Outlined';font-size:36px">flag</span>
+        <h3 style="margin:0;font-family:'Marcellus',serif;font-weight:400;font-size:30px">Our Mission</h3>
+        <p style="margin:0;font-size:17px;line-height:1.65;color:#2E3D5A;text-wrap:pretty">To provide reliable, efficient and well-coordinated marine services that support safe vessel operations and meet the evolving needs of the global shipping industry.</p>
+      </div>
+      <div data-reveal="1" data-reveal-delay="120" style="background:#F6F3EC;padding:44px 38px;display:flex;flex-direction:column;gap:18px;border-top:4px solid #C39549">
+        <span style="width:68px;height:68px;background:#0B1F45;color:#D4AE6A;display:flex;align-items:center;justify-content:center;font-family:'Material Symbols Outlined';font-size:36px">visibility</span>
+        <h3 style="margin:0;font-family:'Marcellus',serif;font-weight:400;font-size:30px">Our Vision</h3>
+        <p style="margin:0;font-size:17px;line-height:1.65;color:#2E3D5A;text-wrap:pretty">To become a trusted marine services partner in Egypt and a recognised provider of integrated vessel support for international shipping companies.</p>
+      </div>
+      <div data-reveal="1" data-reveal-delay="240" style="background:#F6F3EC;padding:44px 38px;display:flex;flex-direction:column;gap:18px;border-top:4px solid #C39549">
+        <span style="width:68px;height:68px;background:#0B1F45;color:#D4AE6A;display:flex;align-items:center;justify-content:center;font-family:'Material Symbols Outlined';font-size:36px">verified</span>
+        <h3 style="margin:0;font-family:'Marcellus',serif;font-weight:400;font-size:30px">Our Commitment</h3>
+        <p style="margin:0;font-size:17px;line-height:1.65;color:#2E3D5A;text-wrap:pretty">To deliver responsive service, dependable coordination and tailored solutions while respecting our clients' operational schedules and requirements.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Clients" style="background:#0B1F45;color:#FFFFFF">
+  <div style="max-width:1280px;margin:0 auto;padding:120px 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:64px;align-items:start">
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <div data-reveal="1" style="color:#D4AE6A;font-size:14px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase">Our Clients</div>
+      <h2 data-reveal="1" style="margin:0;font-family:'Marcellus',serif;font-weight:400;font-size:clamp(34px,4vw,50px);line-height:1.1;text-wrap:balance">Supporting a wide range of maritime clients.</h2>
+      <p data-reveal="1" style="margin:0;font-size:18px;line-height:1.7;color:#D3DAE8;text-wrap:pretty">We aim to build long-term business relationships through dependable service coordination, professional communication and a clear understanding of our clients' operational requirements.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:14px">
+      <sc-for list="{{ clients }}" as="c" hint-placeholder-count="6">
+        <div data-reveal="1" data-reveal-delay="{{ c.delay }}" style="display:flex;align-items:center;gap:16px;border:1px solid #23406F;padding:22px 22px;transition:border-color .3s ease,background .3s ease" style-hover="border-color:#C39549;background:#102A58">
+          <span style="font-family:'Material Symbols Outlined';font-size:32px;color:#D4AE6A;flex:none">{{ c.icon }}</span>
+          <span style="font-size:16.5px;font-weight:600;line-height:1.35">{{ c.label }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<dc-import name="SiteFooter" hint-size="100%,420px" style="display:block"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() { const go = () => window.marvexMotion ? window.marvexMotion() : setTimeout(go, 100); go(); }
+  renderVals() {
+    const clients = [
+      ['directions_boat', 'Shipowners & ship management companies'],
+      ['sailing', 'Vessel operators & charterers'],
+      ['public', 'International shipping agencies'],
+      ['engineering', 'Marine procurement & technical departments'],
+      ['shopping_cart', 'Fleet managers & purchasing teams'],
+      ['local_shipping', 'Operators of commercial cargo & other eligible vessels']
+    ].map(([icon, label], i) => ({ icon, label, delay: i * 80 }));
+    return { clients };
+  }
+}
+</script>
+</body>
+</html>
