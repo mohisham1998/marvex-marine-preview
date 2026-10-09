@@ -12,7 +12,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0&display=block" rel="stylesheet">
-<script src="./image-slot.js"></script>
 <script src="./marvex-motion.js"></script>
 <style>
 html{scroll-behavior:smooth}
@@ -29,7 +28,7 @@ a:hover{color:#8A6424}
 <section data-screen-label="Home hero" style="position:relative;min-height:min(86vh,820px);display:flex;align-items:flex-end;background:#0B1F45;color:#FFFFFF;overflow:hidden">
   <div style="position:absolute;inset:0;overflow:hidden">
     <div data-kenburns="1" style="position:absolute;inset:0">
-      <image-slot id="home-hero" src="./assets/photos/hero-canal.jpg" shape="rect" placeholder="Hero photo: commercial vessel transiting the Suez Canal"></image-slot>
+      <img src="./assets/photos/hero-canal.jpg" alt="Hero photo: commercial vessel transiting the Suez Canal" fetchpriority="high" style="display:block;width:100%;height:100%;object-fit:cover">
     </div>
   </div>
   <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(7,22,52,0.92) 0%,rgba(7,22,52,0.72) 45%,rgba(7,22,52,0.15) 100%)"></div>
@@ -62,8 +61,8 @@ a:hover{color:#8A6424}
 <section data-screen-label="Intro" style="background:#F6F3EC">
   <div style="max-width:1280px;margin:0 auto;padding:120px 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:72px;align-items:center">
     <div data-reveal="1" style="position:relative;height:560px">
-      <div style="position:absolute;left:0;top:0;width:78%;height:82%;background:#E6DFD0"><image-slot id="home-intro-a" src="./assets/photos/stores.jpg" shape="rect" placeholder="Ship supply / onboard delivery photo"></image-slot></div>
-      <div style="position:absolute;right:0;bottom:0;width:52%;height:50%;background:#D9D1C0;border:10px solid #F6F3EC"><image-slot id="home-intro-b" src="./assets/photos/crew.jpg" shape="rect" placeholder="Crew / port logistics photo"></image-slot></div>
+      <div style="position:absolute;left:0;top:0;width:78%;height:82%;background:#E6DFD0"><img src="./assets/photos/stores.jpg" alt="Ship supply / onboard delivery photo" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover"></div>
+      <div style="position:absolute;right:0;bottom:0;width:52%;height:50%;background:#D9D1C0;border:10px solid #F6F3EC"><img src="./assets/photos/crew.jpg" alt="Crew / port logistics photo" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover"></div>
       <div style="position:absolute;left:24px;bottom:24px;background:#0B1F45;color:#FFFFFF;padding:22px 26px;display:flex;align-items:center;gap:16px;max-width:280px;pointer-events:none">
         <span style="font-family:'Material Symbols Outlined';font-size:40px;color:#D4AE6A">sailing</span>
         <span style="font-size:16px;line-height:1.4;font-weight:600">One dependable point of contact</span>
@@ -91,7 +90,7 @@ a:hover{color:#8A6424}
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr));gap:24px">
       <sc-for list="{{ services }}" as="s" hint-placeholder-count="6">
         <a data-reveal="1" data-reveal-delay="{{ s.delay }}" href="{{ s.href }}" style="display:flex;flex-direction:column;background:#F6F3EC;color:#0B1F45;overflow:hidden;transition:transform .35s ease, box-shadow .35s ease" style-hover="transform:translateY(-6px);box-shadow:0 22px 44px rgba(11,31,69,0.14);color:#0B1F45">
-          <div style="height:200px;position:relative;background:#E6DFD0"><image-slot id="{{ s.slot }}" src="{{ s.img }}" shape="rect" placeholder="{{ s.ph }}"></image-slot></div>
+          <div style="height:200px;position:relative;background:#E6DFD0"><img src="{{ s.img }}" alt="{{ s.ph }}" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover"></div>
           <div style="padding:30px 30px 34px;display:flex;flex-direction:column;gap:14px;position:relative">
             <span style="position:absolute;top:-34px;left:30px;width:64px;height:64px;background:#0B1F45;color:#D4AE6A;display:flex;align-items:center;justify-content:center;font-family:'Material Symbols Outlined';font-size:34px">{{ s.icon }}</span>
             <span style="margin-top:28px;font-size:14px;font-weight:700;color:#8A6424;letter-spacing:0.12em">{{ s.num }}</span>
@@ -132,7 +131,7 @@ a:hover{color:#8A6424}
       <a data-reveal="1" href="Service%20Area.dc.html" style="align-self:flex-start;display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;padding-bottom:6px;border-bottom:2px solid #C39549">See our service area<span style="font-family:'Material Symbols Outlined';font-size:22px">arrow_forward</span></a>
     </div>
     <div data-reveal="1" style="height:460px;position:relative;background:#E6DFD0;overflow:hidden">
-      <div data-kenburns="1" style="position:absolute;inset:0"><image-slot id="home-area" src="./assets/photos/husbandry.jpg" shape="rect" placeholder="Suez Canal aerial / convoy photo"></image-slot></div>
+      <div data-kenburns="1" style="position:absolute;inset:0"><img src="./assets/photos/husbandry.jpg" alt="Suez Canal aerial / convoy photo" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover"></div>
     </div>
   </div>
 </section>
