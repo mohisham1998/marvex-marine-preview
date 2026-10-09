@@ -146,12 +146,12 @@ class Component extends DCLogic {
     const services = [
       ['crew', 'groups', 'Crew Change Services', 'Sign-on and sign-off arrangements, moving seafarers smoothly between vessels, airports and accommodation.', 'Crew change / airport transfer photo'],
       ['stores', 'inventory_2', 'Ship Stores Supply & Delivery', 'Deck, engine, technical and safety stores supplied and delivered onboard during transit or port calls.', 'Ship stores / deck & engine supplies photo'],
-      ['customs', 'assignment_turned_in', 'Customs & Clearance', 'Customs clearance for ship stores, spare parts and approved vessel requirements.', 'Customs / spare parts clearance photo'],
+      ['customs', 'assignment_turned_in', 'Customs & Clearance', 'Customs clearance for ship stores, spare parts and approved vessel requirements.', 'Customs / spare parts clearance photo', 'customs-clearance'],
       ['provisions', 'restaurant', 'Provisions Supply', 'Fresh, frozen and dry provisions for the daily needs of vessel crews.', 'Fresh provisions photo'],
-      ['underwater', 'scuba_diving', 'Underwater Inspection & Hull Cleaning', 'Diving operations for hull inspections, condition assessments and underwater cleaning.', 'Underwater diving / hull inspection photo', 'port-terminal'],
-      ['sludge', 'oil_barrel', 'Sludge Disposal', 'Sludge collection and removal through authorised waste reception providers.', 'Sludge reception photo', 'service-area'],
-      ['water', 'water_drop', 'Fresh Water Supply', 'Fresh and potable water replenishment during port calls and scheduled operations.', 'Fresh water supply photo', 'hero-canal'],
-      ['garbage', 'recycling', 'Garbage Collection & Disposal', 'Collection, segregation and disposal of vessel garbage through suitable providers.', 'Garbage collection photo', 'port-terminal'],
+      ['underwater', 'scuba_diving', 'Underwater Inspection & Hull Cleaning', 'Diving operations for hull inspections, condition assessments and underwater cleaning.', 'Underwater diving / hull inspection photo', 'underwater-inspection'],
+      ['sludge', 'oil_barrel', 'Sludge Disposal', 'Sludge collection and removal through authorised waste reception providers.', 'Sludge reception photo', 'sludge-disposal'],
+      ['water', 'water_drop', 'Fresh Water Supply', 'Fresh and potable water replenishment during port calls and scheduled operations.', 'Fresh water supply photo', 'fresh-water'],
+      ['garbage', 'recycling', 'Garbage Collection & Disposal', 'Collection, segregation and disposal of vessel garbage through suitable providers.', 'Garbage collection photo', 'garbage-disposal'],
       ['husbandry', 'anchor', 'Vessel Husbandry Services', 'Essential local arrangements managed during canal transit and port calls.', 'Husbandry / port operations photo'],
       ['publications', 'menu_book', 'Marine Publications Supply', 'Nautical publications, manuals, charts and navigational references.', 'Nautical charts & publications photo']
     ].map(([id, icon, title, intro, ph, img], i) => ({ icon, title, intro, ph, slot: 'home-svc-' + id, img: './assets/photos/' + (img || id) + '.jpg', href: 'Services.dc.html#' + id, num: String(i + 1).padStart(2, '0'), delay: (i % 5) * 80 }));
