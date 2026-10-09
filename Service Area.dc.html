@@ -31,7 +31,7 @@ a:hover{color:#8A6424}
   <div style="position:relative;width:100%;max-width:1280px;margin:0 auto;padding:110px 28px 80px;pointer-events:none;display:flex;flex-direction:column;gap:20px">
     <div data-reveal="1" style="display:flex;align-items:center;gap:10px;font-size:15px;color:#D3DAE8"><span>Home</span><span style="font-family:'Material Symbols Outlined';font-size:18px;color:#D4AE6A">chevron_right</span><span style="color:#FFFFFF;font-weight:600">Service Area</span></div>
     <h1 data-reveal="1" data-reveal-delay="100" style="margin:0;font-family:'Marcellus',serif;font-weight:400;font-size:clamp(44px,6vw,76px);line-height:1.05">Marine Support Along the Suez Canal</h1>
-    <p data-reveal="1" data-reveal-delay="200" style="margin:0;font-size:20px;line-height:1.6;color:#E4E9F2;max-width:640px">Suez Canal transits and Egyptian port calls.</p>
+    <p data-reveal="1" data-reveal-delay="200" style="margin:0;font-size:20px;line-height:1.6;color:#E4E9F2;max-width:640px">Suez Canal transits and calls at five key Egyptian ports.</p>
   </div>
 </section>
 
@@ -44,7 +44,7 @@ a:hover{color:#8A6424}
     <div style="display:flex;flex-direction:column;gap:22px">
       <div data-reveal="1" style="color:#8A6424;font-size:14px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase">Our Service Area</div>
       <h2 data-reveal="1" style="margin:0;font-family:'Marcellus',serif;font-weight:400;font-size:clamp(36px,4.2vw,54px);line-height:1.1;text-wrap:balance">Strategically focused on Egypt's maritime sector.</h2>
-      <p data-reveal="1" style="margin:0;font-size:18px;line-height:1.7;color:#2E3D5A;text-wrap:pretty">Marvex Marine arranges vessel support for Suez Canal transits and calls at Egyptian ports, according to service availability and operational requirements.</p>
+      <p data-reveal="1" style="margin:0;font-size:18px;line-height:1.7;color:#2E3D5A;text-wrap:pretty">Marvex Marine coordinates vessel support for Suez Canal transits and calls at key Egyptian ports, subject to service availability and operational requirements.</p>
       <p data-reveal="1" style="margin:0;font-size:18px;line-height:1.7;color:#2E3D5A;text-wrap:pretty">Whether your vessel requires essential stores, crew change assistance or delivery of urgent ship spares, we coordinate the required services efficiently and professionally.</p>
       <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px;margin-top:8px">
         <div style="display:flex;gap:14px;align-items:center;background:#FFFFFF;border:1px solid #E6DFD0;padding:18px"><span style="font-family:'Material Symbols Outlined';font-size:30px;color:#8A6424">swap_vert</span><span style="font-size:16.5px;font-weight:600">Suez Canal transits</span></div>
@@ -54,20 +54,22 @@ a:hover{color:#8A6424}
   </div>
 </section>
 
-<section data-screen-label="Local network" style="background:#0B1F45;color:#FFFFFF">
+<section data-screen-label="Ports" style="background:#0B1F45;color:#FFFFFF">
   <div style="max-width:1280px;margin:0 auto;padding:120px 28px">
     <div style="display:flex;flex-direction:column;gap:18px;max-width:760px;margin-bottom:60px">
-      <div data-reveal="1" style="color:#D4AE6A;font-size:14px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase">Local Coordination Network</div>
-      <h2 data-reveal="1" style="margin:0;font-family:'Marcellus',serif;font-weight:400;font-size:clamp(34px,4vw,50px);line-height:1.1;text-wrap:balance">Everything your vessel needs, arranged locally.</h2>
+      <div data-reveal="1" style="color:#D4AE6A;font-size:14px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase">Ports We Cover</div>
+      <h2 data-reveal="1" style="margin:0;font-family:'Marcellus',serif;font-weight:400;font-size:clamp(34px,4vw,50px);line-height:1.1;text-wrap:balance">Five key Egyptian ports, one point of contact.</h2>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:16px">
-      <sc-for list="{{ network }}" as="n" hint-placeholder-count="6">
-        <a data-reveal="1" data-reveal-delay="{{ n.delay }}" href="{{ n.href }}" style="border:1px solid #23406F;padding:30px 22px;display:flex;flex-direction:column;gap:16px;color:#FFFFFF;transition:background .3s ease,border-color .3s ease,transform .3s ease" style-hover="background:#102A58;border-color:#C39549;transform:translateY(-4px);color:#FFFFFF">
-          <span style="font-family:'Material Symbols Outlined';font-size:42px;color:#D4AE6A">{{ n.icon }}</span>
-          <span style="font-size:18px;font-weight:700">{{ n.label }}</span>
-        </a>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:16px">
+      <sc-for list="{{ ports }}" as="p" hint-placeholder-count="5">
+        <div data-reveal="1" data-reveal-delay="{{ p.delay }}" style="border:1px solid #23406F;padding:30px 24px;display:flex;flex-direction:column;gap:14px;transition:background .3s ease,border-color .3s ease" style-hover="background:#102A58;border-color:#C39549">
+          <span style="font-family:'Material Symbols Outlined';font-size:40px;color:#D4AE6A">location_on</span>
+          <span style="font-family:'Marcellus',serif;font-size:26px;line-height:1.15">{{ p.name }}</span>
+          <p style="margin:0;font-size:15.5px;line-height:1.6;color:#D3DAE8;text-wrap:pretty">{{ p.text }}</p>
+        </div>
       </sc-for>
     </div>
+    <p data-reveal="1" style="margin:48px 0 0;max-width:820px;font-size:17px;line-height:1.7;color:#D3DAE8;text-wrap:pretty">Through coordination with suitable local suppliers and service providers, Marvex Marine aims to offer clients a single point of contact for a broad range of vessel requirements across these locations.</p>
   </div>
 </section>
 
@@ -86,11 +88,14 @@ a:hover{color:#8A6424}
 class Component extends DCLogic {
   componentDidMount() { const go = () => window.marvexMotion ? window.marvexMotion() : setTimeout(go, 100); go(); }
   renderVals() {
-    const network = [
-      ['groups', 'Crew logistics', 'crew'], ['inventory_2', 'Ship supply', 'stores'], ['assignment_turned_in', 'Customs clearance', 'customs'],
-      ['restaurant', 'Provisions', 'provisions'], ['menu_book', 'Marine publications', 'publications'], ['anchor', 'Husbandry', 'husbandry']
-    ].map(([icon, label, id], i) => ({ icon, label, href: 'Services.dc.html#' + id, delay: i * 80 }));
-    return { network };
+    const ports = [
+      ['Port Said', 'Vessel husbandry, crew change arrangements, ship supply, fresh water supply, sludge disposal, garbage collection and other coordinated marine services.'],
+      ['Suez', 'Vessel support, ship supply, waste disposal arrangements, fresh water supply and other available marine services.'],
+      ['Ain Sokhna', 'Marine logistics, provisions and stores supply, fresh water arrangements, waste management and vessel support services.'],
+      ['Alexandria', 'Ship supply, crew logistics, customs clearance coordination, fresh water supply, waste disposal arrangements and other vessel requirements.'],
+      ['Damietta', 'Vessel husbandry, ship stores and provisions, fresh water supply, sludge disposal, garbage collection and additional marine support.']
+    ].map(([name, text], i) => ({ name, text, delay: i * 80 }));
+    return { ports };
   }
 }
 </script>
