@@ -43,7 +43,7 @@
       <label for="mx-nav-toggle" class="mx-burger" aria-label="Menu"><span class="mx-open">menu</span><span class="mx-close">close</span></label>
       <nav class="mx-nav" style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
         <sc-for list="{{ links }}" as="l" hint-placeholder-count="5">
-          <a href="{{ l.href }}" data-active="{{ l.act }}" style="padding:14px 16px;font-size:16px;font-weight:600;color:{{ l.color }};border-bottom:2px solid {{ l.line }}" style-hover="color:#8A6424">{{ l.label }}</a>
+          <a href="{{ l.href }}" data-active="{{ l.act }}" style="display:flex;align-items:center;gap:7px;padding:14px 14px;font-size:16px;font-weight:600;color:{{ l.color }};border-bottom:2px solid {{ l.line }}" style-hover="color:#8A6424"><span aria-hidden="true" style="font-family:'Material Symbols Outlined';font-size:20px;line-height:1;color:#C39549">{{ l.icon }}</span>{{ l.label }}</a>
         </sc-for>
       </nav>
     </div>
@@ -55,12 +55,12 @@ class Component extends DCLogic {
   renderVals() {
     const active = this.props.active ?? 'home';
     const links = [
-      ['home', 'Home', '/'],
-      ['about', 'About Us', '/about'],
-      ['services', 'Our Services', '/services'],
-      ['area', 'Service Area', '/service-area'],
-      ['contact', 'Contact Us', '/contact']
-    ].map(([k, label, href]) => ({ label, href, color: k === active ? '#0B1F45' : '#3A4A66', line: k === active ? '#C39549' : 'transparent', act: k === active ? '1' : '0' }));
+      ['home', 'Home', '/', 'home'],
+      ['services', 'Our Services', '/services', 'directions_boat'],
+      ['area', 'Service Area', '/service-area', 'map'],
+      ['about', 'About Us', '/about', 'info'],
+      ['contact', 'Contact Us', '/contact', 'call']
+    ].map(([k, label, href, icon]) => ({ label, href, icon, color: k === active ? '#0B1F45' : '#3A4A66', line: k === active ? '#C39549' : 'transparent', act: k === active ? '1' : '0' }));
     return { links };
   }
 }
