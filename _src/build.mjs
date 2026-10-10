@@ -8,6 +8,9 @@ import { fileURLToPath } from 'node:url';
 import en from './i18n/en.mjs';
 import ar from './i18n/ar.mjs';
 import ru from './i18n/ru.mjs';
+import React from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
+import * as Flags from 'country-flag-icons/react/3x2';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DOMAIN = 'https://marvex-marine.com';
@@ -29,6 +32,8 @@ const icons = new Set();
 const ms = (name, cls = '') => { icons.add(name); return `<span class="ms${cls ? ' ' + cls : ''}" aria-hidden="true">${name}</span>`; };
 const arrow = () => ms('arrow_forward', 'ms--flip');
 const ltr = (s) => `<bdi dir="ltr">${esc(s)}</bdi>`;
+// Country flags come from the country-flag-icons React components, rendered to static SVG at build time.
+const flag = (code, cls = 'flag') => renderToStaticMarkup(React.createElement(Flags[code.toUpperCase()], { className: cls, 'aria-hidden': 'true', focusable: 'false' }));
 const href = (t, key) => key === 'home' ? (t.prefix ? t.prefix + '/' : '/') : t.prefix + PAGES[key];
 const abs = (t, key) => DOMAIN + href(t, key);
 const hash = (f) => crypto.createHash('sha1').update(fs.readFileSync(path.join(ROOT, f))).digest('hex').slice(0, 10);
@@ -44,7 +49,7 @@ function pic(name, alt, { sizes = '100vw', eager = false, pos, cls = '' } = {}) 
 // ---------- shared chrome ----------
 function header(t, active) {
   const links = Object.keys(PAGES).map((k) => `<a href="${href(t, k)}"${k === active ? ' aria-current="page"' : ''}>${ms(NAV_ICONS[k])}<span>${esc(t.nav[k])}</span></a>`).join('');
-  const langItems = LANGS.map((l) => `<li><a href="${href(l, active === '404' ? 'home' : active)}" hreflang="${l.lang}" lang="${l.lang}"${l === t ? ' aria-current="true"' : ''}><img src="/assets/flags/${l.flag}.svg" alt="" width="24" height="18"><span>${esc(l.name)}</span>${l === t ? ms('check', 'lang__tick') : ''}</a></li>`).join('');
+  const langItems = LANGS.map((l) => `<li><a href="${href(l, active === '404' ? 'home' : active)}" hreflang="${l.lang}" lang="${l.lang}"${l === t ? ' aria-current="true"' : ''}>${flag(l.flag)}<span>${esc(l.name)}</span>${l === t ? ms('check', 'lang__tick') : ''}</a></li>`).join('');
   return `<a class="skip" href="#main">${esc(t.ui.skip)}</a>
 <div class="topbar"><div class="wrap topbar__in">
   <span class="topbar__loc">${ms('location_on')}${esc(t.topLoc)}</span>
@@ -58,7 +63,7 @@ function header(t, active) {
   <nav class="nav" id="site-nav" aria-label="${esc(t.ui.mainNav)}">${links}</nav>
   <div class="navbar__tools">
     <details class="lang" data-lang>
-      <summary aria-label="${esc(t.ui.language)}: ${esc(t.name)}"><img src="/assets/flags/${t.flag}.svg" alt="" width="24" height="18"><span>${t.short}</span>${ms('expand_more', 'lang__caret')}</summary>
+      <summary aria-label="${esc(t.ui.language)}: ${esc(t.name)}">${flag(t.flag)}<span>${t.short}</span>${ms('expand_more', 'lang__caret')}</summary>
       <ul class="lang__menu">${langItems}</ul>
     </details>
     <button class="burger" type="button" aria-expanded="false" aria-controls="site-nav" data-label-open="${esc(t.ui.menu)}" data-label-close="${esc(t.ui.closeMenu)}" aria-label="${esc(t.ui.menu)}">${ms('menu', 'burger__open')}${ms('close', 'burger__close')}</button>
@@ -69,7 +74,7 @@ function header(t, active) {
 function footer(t, active) {
   const svc = t.services.map((s) => `<li><a href="${href(t, 'services')}#${s.id}">${esc(s.short)}</a></li>`).join('');
   const company = ['home', 'about', 'area', 'contact'].map((k) => `<li><a href="${href(t, k)}">${esc(t.nav[k])}</a></li>`).join('');
-  const langs = LANGS.map((l) => `<a href="${href(l, active === '404' ? 'home' : active)}" hreflang="${l.lang}" lang="${l.lang}"${l === t ? ' aria-current="true"' : ''}><img src="/assets/flags/${l.flag}.svg" alt="" width="20" height="15">${esc(l.name)}</a>`).join('');
+  const langs = LANGS.map((l) => `<a href="${href(l, active === '404' ? 'home' : active)}" hreflang="${l.lang}" lang="${l.lang}"${l === t ? ' aria-current="true"' : ''}>${flag(l.flag, 'flag flag--sm')}${esc(l.name)}</a>`).join('');
   return `<footer class="footer">
   <div class="wrap footer__grid">
     <div class="footer__brand">
