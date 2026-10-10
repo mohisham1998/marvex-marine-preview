@@ -91,8 +91,8 @@ html{scrollbar-color:var(--gold) var(--sand-200)}
 .lang summary{list-style:none;display:flex;align-items:center;gap:8px;height:42px;padding-inline:12px 8px;border:1px solid var(--sand-200);border-radius:2px;cursor:pointer;font-weight:700;font-size:14px;letter-spacing:.04em;color:var(--navy);transition:border-color .2s,background-color .2s}
 .lang summary::-webkit-details-marker{display:none}
 .lang summary:hover,.lang[open] summary{border-color:var(--gold);background:var(--sand)}
-.flag{width:24px;height:16px;flex:none;display:block;border-radius:2px;box-shadow:0 0 0 1px rgba(11,31,69,.14)}
-.flag--sm{width:20px;height:14px}
+.flag{width:24px;height:18px;flex:none;display:block;border-radius:2px;box-shadow:0 0 0 1px rgba(11,31,69,.14)}
+.flag--sm{width:20px;height:15px}
 .lang__caret{font-size:20px;color:var(--gold-ink);transition:rotate .3s var(--ease)}
 .lang[open] .lang__caret{rotate:180deg}
 .lang__menu{position:absolute;inset-inline-end:0;top:calc(100% + 8px);min-width:200px;background:var(--white);border:1px solid var(--sand-200);box-shadow:0 18px 40px rgba(11,31,69,.16);padding:6px;z-index:60;animation:pop .22s var(--ease)}

@@ -2,9 +2,12 @@
   "name": "marvex-site-build",
   "private": true,
   "type": "module",
-  "scripts": { "build": "node build.mjs" },
+  "scripts": {
+    "build": "node build.mjs"
+  },
   "dependencies": {
-    "country-flag-icons": "1.5.13",
+    "@iconify-json/flag": "1.2.1",
+    "@iconify/react": "5.0.2",
     "react": "18.3.1",
     "react-dom": "18.3.1"
   }

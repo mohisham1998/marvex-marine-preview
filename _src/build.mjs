@@ -10,7 +10,7 @@ import ar from './i18n/ar.mjs';
 import ru from './i18n/ru.mjs';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-import * as Flags from 'country-flag-icons/react/3x2';
+import { Icon } from '@iconify/react';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DOMAIN = 'https://marvex-marine.com';
@@ -32,8 +32,14 @@ const icons = new Set();
 const ms = (name, cls = '') => { icons.add(name); return `<span class="ms${cls ? ' ' + cls : ''}" aria-hidden="true">${name}</span>`; };
 const arrow = () => ms('arrow_forward', 'ms--flip');
 const ltr = (s) => `<bdi dir="ltr">${esc(s)}</bdi>`;
-// Country flags come from the country-flag-icons React components, rendered to static SVG at build time.
-const flag = (code, cls = 'flag') => renderToStaticMarkup(React.createElement(Flags[code.toUpperCase()], { className: cls, 'aria-hidden': 'true', focusable: 'false' }));
+// Country flags: Iconify's React <Icon> with the "flag" icon set, rendered to static SVG at build time.
+const FLAG_SET = JSON.parse(fs.readFileSync(path.join(ROOT, '_src/node_modules/@iconify-json/flag/icons.json'), 'utf8'));
+const flag = (code, cls = 'flag') => {
+  const i = FLAG_SET.icons[code + '-4x3'];
+  if (!i) throw new Error('missing flag icon: ' + code);
+  const icon = { body: i.body, width: i.width || FLAG_SET.width, height: i.height || FLAG_SET.height };
+  return renderToStaticMarkup(React.createElement(Icon, { icon, ssr: true, className: cls, 'aria-hidden': true }));
+};
 const href = (t, key) => key === 'home' ? (t.prefix ? t.prefix + '/' : '/') : t.prefix + PAGES[key];
 const abs = (t, key) => DOMAIN + href(t, key);
 const hash = (f) => crypto.createHash('sha1').update(fs.readFileSync(path.join(ROOT, f))).digest('hex').slice(0, 10);
