@@ -128,13 +128,20 @@ function pageHero(t, key, p, img) {
 }
 
 function contactCta(t, p) {
+  const L = t.contactLabels;
+  const row = (cls, href, ico, label, value, ext) =>
+    `<a class="cta__row${cls}" href="${href}"${ext ? ' target="_blank" rel="noopener"' : ''}><span class="cta__ico">${ico}</span><span class="cta__txt"><span class="cta__lbl">${esc(label)}</span><span class="cta__val">${value}</span></span>${arrow()}</a>`;
   return `<section class="cta">
   <div class="wrap cta__in">
-    <div class="cta__copy"><h2 class="h2">${esc(p.ctaH2)}</h2><p>${esc(p.ctaP)}</p></div>
-    <div class="cta__actions">
-      <a class="btn btn--gold" href="${WHATSAPP.href}" target="_blank" rel="noopener">${waIcon('wa-ico')}<span>${esc(t.contactLabels.whatsapp)}</span></a>
-      <a class="btn btn--ghost" href="${PHONE.href}">${ms('call')}${ltr(PHONE.text)}</a>
-      <!--email_off--><a class="btn btn--ghost" href="mailto:${EMAIL}">${ms('mail')}<bdi dir="ltr">${EMAIL}</bdi></a><!--/email_off-->
+    <div class="cta__copy">
+      <span class="cta__kicker">${esc(t.nav.contact)}</span>
+      <h2 class="h2">${esc(p.ctaH2)}</h2>
+      <p>${esc(p.ctaP)}</p>
+    </div>
+    <div class="cta__panel" data-reveal>
+      <!--email_off-->${row('', 'mailto:' + EMAIL, ms('mail'), L.email, `<bdi dir="ltr">${EMAIL}</bdi>`)}<!--/email_off-->
+      ${row(' cta__row--wa', WHATSAPP.href, waIcon('wa-ico'), L.whatsapp, ltr(WHATSAPP.text), true)}
+      ${row('', PHONE.href, ms('call'), L.phone, ltr(PHONE.text))}
     </div>
   </div>
 </section>`;
