@@ -9,5 +9,7 @@ export async function onRequest({ request, next }) {
     url.port = "";
     return Response.redirect(url.toString(), 301);
   }
+  // Generator sources live in the repo but are not part of the site.
+  if (url.pathname.startsWith("/_src")) return new Response("Not found", { status: 404 });
   return next();
 }

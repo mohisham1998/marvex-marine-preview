@@ -1,0 +1,149 @@
+{
+ "container-terminal": {
+  "w": 1280,
+  "h": 777,
+  "widths": [
+   800,
+   1280
+  ]
+ },
+ "crew-change": {
+  "w": 1600,
+  "h": 2326,
+  "widths": [
+   800,
+   1600
+  ]
+ },
+ "crew": {
+  "w": 2560,
+  "h": 1920,
+  "widths": [
+   800,
+   1600,
+   2560
+  ]
+ },
+ "customs-clearance": {
+  "w": 1600,
+  "h": 1098,
+  "widths": [
+   800,
+   1600
+  ]
+ },
+ "customs": {
+  "w": 1152,
+  "h": 860,
+  "widths": [
+   800,
+   1152
+  ]
+ },
+ "fresh-water": {
+  "w": 1600,
+  "h": 1613,
+  "widths": [
+   800,
+   1600
+  ]
+ },
+ "garbage-disposal": {
+  "w": 1600,
+  "h": 1600,
+  "widths": [
+   800,
+   1600
+  ]
+ },
+ "hero-canal-hd": {
+  "w": 2560,
+  "h": 1536,
+  "widths": [
+   800,
+   1600,
+   2560
+  ]
+ },
+ "husbandry": {
+  "w": 1289,
+  "h": 860,
+  "widths": [
+   800,
+   1289
+  ]
+ },
+ "og-marvex": {
+  "w": 1200,
+  "h": 630,
+  "widths": [
+   800,
+   1200
+  ]
+ },
+ "port-terminal": {
+  "w": 2560,
+  "h": 1711,
+  "widths": [
+   800,
+   1600,
+   2560
+  ]
+ },
+ "provisions": {
+  "w": 1528,
+  "h": 860,
+  "widths": [
+   800,
+   1528
+  ]
+ },
+ "service-area": {
+  "w": 2560,
+  "h": 1711,
+  "widths": [
+   800,
+   1600,
+   2560
+  ]
+ },
+ "ship-stores": {
+  "w": 1600,
+  "h": 2537,
+  "widths": [
+   800,
+   1600
+  ]
+ },
+ "sludge-disposal": {
+  "w": 1600,
+  "h": 1600,
+  "widths": [
+   800,
+   1600
+  ]
+ },
+ "sokhna-terminal": {
+  "w": 1600,
+  "h": 900,
+  "widths": [
+   800,
+   1600
+  ]
+ },
+ "underwater-cleaning": {
+  "w": 1600,
+  "h": 1625,
+  "widths": [
+   800,
+   1600
+  ]
+ },
+ "underwater-inspection": {
+  "w": 505,
+  "h": 508,
+  "widths": [
+   505
+  ]
+ }
+}

@@ -8,3 +8,9 @@
 /Service%20Area.dc /service-area 301
 /Contact.dc.html /contact 301
 /Contact.dc /contact 301
+/SiteHeader.dc.html / 301
+/SiteFooter.dc.html / 301
+/en / 301
+/en/* /:splat 301
+/ar/index.html /ar/ 301
+/ru/index.html /ru/ 301
