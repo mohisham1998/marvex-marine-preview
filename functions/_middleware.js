@@ -11,5 +11,8 @@ export async function onRequest({ request, next }) {
   }
   // Generator sources live in the repo but are not part of the site.
   if (url.pathname.startsWith("/_src")) return new Response("Not found", { status: 404 });
+  // Retired flag images (flags are now inline SVG from the country-flag-icons React components).
+  // Answer here so stale edge-cached copies are never served.
+  if (url.pathname.startsWith("/assets/flags/")) return new Response("Not found", { status: 404, headers: { "Cache-Control": "no-store" } });
   return next();
 }
